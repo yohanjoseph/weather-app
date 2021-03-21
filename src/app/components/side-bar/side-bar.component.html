@@ -1,0 +1,68 @@
+<!--
+    Side bar HTML elelments and related events.
+-->
+<div class="sidenav shadow-style">
+  <div class="content-container">
+    <div class="text-container">
+      <input
+        type="text"
+        class="input-box"
+        placeholder="Type city name"
+        [value]="cityName"
+        (input)="getValue($event.target.value)"
+        (keydown.enter)="addCity()"
+      />
+      <span class="material-icons add-btn" (click)="addCity()">
+        add
+      </span>
+    </div>
+    <hr class="hr-cls" />
+    <div class="recent-list-container">
+      <p class="recent-heading">Recent Locations</p>
+      <ng-container *ngIf="!countryList || countryList.length === 0">
+        <div class="no-content-msg">
+          <span class="material-icons">
+            help_outline
+          </span>
+          <br />
+          Add country
+        </div>
+      </ng-container>
+      <ng-container *ngIf="countryList && countryList.length > 0">
+        <ul>
+          <ng-container *ngFor="let country of countryList">
+            <li [title]="country.weather.description" *ngIf="country">
+              <span class="route-link" (click)="detailView(country.id)"
+                >{{ country.name }}
+              </span>
+              -
+              <span class="temp-css">{{ country.weather.temp }}</span>
+              <img
+                [src]="country.weather.iconPath"
+                class="img-weather"
+                [title]="country.weather.description"
+              />
+              <div class="action-container">
+                <span
+                  class="material-icons action-ico"
+                  title="Refresh City"
+                  (click)="refreshCity(country)"
+                >
+                  refresh
+                </span>
+                <span
+                  class="material-icons action-ico"
+                  title="Remove City"
+                  (click)="removeCity(country)"
+                >
+                  clear
+                </span>
+              </div>
+            </li>
+          </ng-container>
+        </ul>
+      </ng-container>
+    </div>
+    <button class="clear-btn" (click)="clearAll()">clear</button>
+  </div>
+</div>

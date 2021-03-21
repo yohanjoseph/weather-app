@@ -1,0 +1,14 @@
+@import "../variables.scss";
+.main {
+  background-color: $bg-color;
+  height: calc(100vh - 3%);
+  width: 72%;
+  position: fixed;
+  left: 27%;
+  border: 2px solid $border-color;
+  top: 1%;
+  overflow: scroll;
+}
+.container {
+  padding: 1px;
+}

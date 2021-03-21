@@ -1,0 +1,69 @@
+<div class="detail-view-container">
+  <ng-container *ngIf="!cityId">
+    <div class="no-content-msg msg">
+      Please select a city from menu.
+    </div>
+  </ng-container>
+  <ng-container *ngIf="cityId && cityInfo">
+    <div class="heading">
+      <span class="material-icons refersh-ico opposite" title="Refresh City">
+        location_on
+      </span>
+      <h2>{{ cityInfo.name }}</h2>
+      <span
+        class="material-icons refersh-ico"
+        title="Refresh City"
+        (click)="refreshWeather()"
+      >
+        refresh
+      </span>
+    </div>
+    <div class="weather-content-img">
+      <img [src]="cityInfo.weather.iconPath" class="ico-image" />
+    </div>
+    <div class="weather-details">
+      <div class="metrics temp">
+        <span class="material-icons metric-ico">
+          ac_unit
+        </span>
+        <span class="metric-text"
+          >Temperature: {{ cityInfo.weather.temp }}</span
+        >
+      </div>
+      <br />
+      <div class="metrics sky">
+        <span class="material-icons metric-ico">
+          cloud_queue
+        </span>
+        <span class="metric-text">Sky : {{ cityInfo.weather.main }}</span>
+      </div>
+      <br />
+      <div class="metrics wind">
+        <span class="material-icons metric-ico">
+          local_florist
+        </span>
+        <span class="metric-text">Wind : {{ cityInfo.weather.windspeed }}</span>
+      </div>
+      <br />
+      <div class="metrics pressure">
+        <span class="material-icons metric-ico">
+          fingerprint
+        </span>
+        <span class="metric-text"
+          >Pressure : {{ cityInfo.weather.pressure }}</span
+        >
+      </div>
+    </div>
+    <div class="next-days">
+      <div class="row">
+        <ng-container *ngFor="let weather of cityInfo.daily">
+          <div class="column">
+            <p class="date-info">{{ weather.day }} {{ weather.date }}</p>
+            <img [src]="weather.weather.iconPath" class="daily-img" />
+            <p class="date-info-temp">{{ weather.weather.temp }}</p>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,123 @@
+@import "../../../variables.scss";
+.sidenav {
+  width: 20%;
+  background-color: $bg-color;
+  position: fixed;
+  top: 1%;
+  left: 6%;
+  height: calc(100vh - 3%);
+  border: 2px solid $border-color;
+}
+.content-container {
+  padding: 0px;
+  margin-top: 10px;
+  height: 100%;
+  position: relative;
+}
+.text-container {
+  padding: 10px;
+  position: relative;
+}
+.input-box {
+  width: 81%;
+  height: 28px;
+  border: none;
+  border-bottom: 1px solid $theme-shade;
+  font-size: 14px;
+  color: $text-color;
+  padding: 6px;
+  letter-spacing: 0.5px;
+}
+input:focus {
+  outline: none !important;
+}
+.add-btn {
+  position: absolute;
+  top: 20%;
+  right: 4%;
+  font-size: 35px;
+  cursor: pointer;
+  color: $theme-shade;
+}
+.add-btn:active {
+  opacity: 0.1;
+}
+.hr-cls {
+  border: 1px solid $border-color;
+}
+.recent-list-container {
+  margin-top: 20px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: transparent;
+  font-size: 20px;
+}
+li {
+  display: block;
+  color: $link-color;
+  padding: 20px;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  position: relative;
+}
+li.active {
+  color: white;
+  background-color: $theme-shade;
+}
+.recent-heading {
+  padding-left: 22px;
+  padding-bottom: 4px;
+  color: $text-color;
+  border-bottom: 1px solid $shadow-shade;
+  margin: 0;
+  opacity: 0.5;
+}
+.action-container {
+  position: absolute;
+  display: inline;
+  right: 4%;
+}
+.action-ico {
+  padding-right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: $theme-shade;
+}
+.action-ico:active {
+  opacity: 0.1;
+}
+.clear-btn {
+  position: absolute;
+  right: 5%;
+  bottom: 3%;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 8px;
+  background: $white;
+  border: 1px solid $theme-shade;
+  color: $theme-shade;
+  cursor: pointer;
+}
+button:active {
+  opacity: 0.1;
+  outline: none !important;
+}
+.img-weather {
+  height: 40px;
+  position: absolute;
+  top: 12px;
+  right: 80px;
+}
+.temp-css {
+  background-color: $temp-color;
+  color: $white;
+  border-radius: 7px;
+  padding: 4px;
+}
+.route-link {
+  cursor: pointer;
+}

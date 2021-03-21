@@ -1,0 +1,17 @@
+@import "variables.scss";
+/* You can add global styles to this file, and also import other style files */
+.shadow-style {
+  box-shadow: -1px 0px 14px $shadow-shade;
+}
+.no-content-msg {
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  border: 1px solid $theme-shade;
+  width: 95%;
+  margin: 9px;
+  height: 70px;
+  text-align: center;
+  padding-top: 10px;
+  border-radius: 8px;
+  color: $theme-shade;
+}
